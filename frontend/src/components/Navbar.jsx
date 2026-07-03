@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout, selectUser } from '../store/slices/authSlice';
 import { toggleTheme, selectTheme } from '../store/slices/themeSlice';
+import { queryClient } from '../services/queryClient';
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ export default function Navbar() {
   const theme = useSelector(selectTheme);
 
   const handleLogout = () => {
+    queryClient.clear();
     dispatch(logout());
     navigate('/login');
   };

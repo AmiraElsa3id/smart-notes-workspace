@@ -22,7 +22,6 @@ export default function NoteForm({ defaultValues, onSubmit, isLoading }) {
       title: '',
       content: '',
       category: 'other',
-      tags: '',
       status: 'active',
       isPinned: false,
       ...defaultValues,
